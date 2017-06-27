@@ -9,10 +9,10 @@ import java.util.List;
  */
 public class CarPOJO {
     
-    private String name;
-    private String brand;
-    private int canBeBuild;
-    private List< PartPOJO> needeParts;
+    private final String name;
+    private final String brand;
+    private final int canBeBuild;
+    private final List< PartPOJO> needeParts;
 
     public CarPOJO(String name, String brand, int canBeBuild, List<PartPOJO> needeParts) {
         this.name = name;
@@ -53,7 +53,7 @@ public class CarPOJO {
         private String name;
         private String brand;
         private int canBeBuild;
-        private List< PartPOJO> needeParts;
+        private final List< PartPOJO> needeParts;
 
         public Builder() {
             this.id = 0;

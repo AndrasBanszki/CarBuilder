@@ -30,14 +30,13 @@ public class CarDataDAO extends MySqlConnector {
             
             while (rs.next()) {
                 if( !carBuilder.containsKey(rs.getInt("id")) ){
-                    carBuilder.put(rs.getInt("id"), new Builder()
-                            .setId(rs.getInt("id"))
+                    carBuilder.put(rs.getInt("id"), 
+                            new Builder().setId(rs.getInt("id"))
                             .setName(rs.getString("name"))
                             .setBrand(rs.getString("brand"))
                             .addNeedePart(new PartPOJO(rs.getInt("need"),rs.getNString("part"))));
                 } else{
-                    Builder b = carBuilder.get(rs.getInt("id"));
-                    b = b.addNeedePart(new PartPOJO(rs.getInt("need"), rs.getNString("part")));  
+                    carBuilder.get(rs.getInt("id")).addNeedePart(new PartPOJO(rs.getInt("need"), rs.getNString("part"))); 
                 }
             }
         } catch (SQLException ex) {
