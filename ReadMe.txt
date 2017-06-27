@@ -16,9 +16,3 @@ Columns of the database:
 car_type - id, name, brand
 part_storage - id, name, number
 car_part_connection - id, part_storage_id, car_type_id
-
-Technology good to know:
-- JavaEE (Servlet, JSP)
-- Server to run the web application (Wildfly, Tomcat, ...)
-- JDBC
-- Maven or Gradle for build tool
